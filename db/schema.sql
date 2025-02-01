@@ -1,32 +1,37 @@
+-- Drop the database if it exists and create a new one
 DROP DATABASE IF EXISTS employees_db;
 CREATE DATABASE employees_db;
 
+-- Switch to the new database
 \c employees_db;
 
-CREATE TABLE department (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(30) UNIQUE NOT NULL
+-- Create department table
+CREATE TABLE departments (
+  dept_id SERIAL PRIMARY KEY,
+  dept_name VARCHAR(50) NOT NULL UNIQUE
 );
 
-CREATE TABLE role (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(30) UNIQUE NOT NULL,
-    salary DECIMAL NOT NULL,
-    department_id INTEGER NOT NULL,
-    FOREIGN KEY (department_id)
-    REFERENCES department(id)
+-- Create role table
+CREATE TABLE job_roles (
+  role_id SERIAL PRIMARY KEY,
+  role_title VARCHAR(50) NOT NULL UNIQUE,
+  base_salary DECIMAL(10, 2) NOT NULL,
+  department_id INTEGER NOT NULL,
+  FOREIGN KEY (department_id) 
+    REFERENCES departments (dept_id) 
     ON DELETE CASCADE
 );
 
-CREATE TABLE employee (
-  id SERIAL PRIMARY KEY,
-  first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR (30) NOT NULL,
+-- Create employee table
+CREATE TABLE employees (
+  emp_id SERIAL PRIMARY KEY,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
   role_id INTEGER NOT NULL,
   manager_id INTEGER,
-  FOREIGN KEY (role_id)
-  REFERENCES role (id),
-  FOREIGN KEY (manager_id)
-  REFERENCES employee (id)
-  ON DELETE CASCADE
+  FOREIGN KEY (role_id) 
+    REFERENCES job_roles (role_id),
+  FOREIGN KEY (manager_id) 
+    REFERENCES employees (emp_id) 
+    ON DELETE CASCADE
 );
