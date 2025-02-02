@@ -1,6 +1,8 @@
 import inquirer from "inquirer";
-import db from "./db.js";
+import {pool,connectToDb} from "./connection.js";
 
+connectToDb()
+const db = pool
 type Action =
   | "View all departments"
   | "View all roles"
