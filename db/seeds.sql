@@ -1,5 +1,5 @@
 -- Insert data into the departments table
-INSERT INTO department (dept_name)
+INSERT INTO department (name)
 VALUES 
     ('Sales'),
     ('Marketing'),
@@ -7,7 +7,7 @@ VALUES
     ('Human Resources');
 
 -- Insert data into the job_roles table
-INSERT INTO role (role_title, base_salary, department_id)
+INSERT INTO role (title, salary, department_id)
 VALUES 
     ('Sales Manager', 70000.00, 1),  -- Sales department
     ('Marketing Manager', 75000.00, 2),  -- Marketing department
