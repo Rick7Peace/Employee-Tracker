@@ -30,7 +30,7 @@ DB_PASSWORD=""
 
 DB_HOST=localhost
 
-DB_PORT=5433
+DB_PORT=5432
 
 
 # Usage
@@ -44,17 +44,9 @@ You will be presented with a menu of options, allowing you to:
 
 • View all employees
 
-• View employees by manager
-
-• View employees by department
-
-• View total utilized budget of a department
-
 • Add a department, role, or employee
 
 • Update an employee’s role or manager
-
-• Delete a department, role, or employee
 
 Select the desired option using your arrow keys and follow the prompts to manage your employee database.
 
