@@ -58,7 +58,7 @@ You will be presented with a menu of options, allowing you to:
 
 Select the desired option using your arrow keys and follow the prompts to manage your employee database.
 
-Here's an instructional video that you can watch: 
+Here's an instructional video that you can watch: https://drive.google.com/file/d/1G08w0GKpnmMp_DmgijqW3ts8O8spmy4b/view?usp=sharing
 
 # Contributing
 Contributions are welcome! Please follow these steps:
